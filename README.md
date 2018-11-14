@@ -1,5 +1,20 @@
 ![](https://api.travis-ci.org/gardncl/ridj-it-sample.svg?branch=master)
 
+## Setup database
+1. Install docker
+2. Copy `docker-compose.yml.example` to `docker-compose.yml`
+3. Give your docker file a real volume to store data then run it
+4. Connect to your database `psql -p 5432`
+5. Create a role for `dev` which is who we are connecting as
+```sql
+CREATE USER dev;
+```
+6. Create the database we are connecting to
+```sql
+CREATE DATABASE ridjit;
+```
+7. You're ready!
+
 Imagine you work on a web application based around an MVC framework.
 
 There is a page or rather API endpoint that displays (returns) a list of destinations (trips) with some information including Trip ID. These destinations are pulled from a database that supports this application. Assuming destination (trip) has a clickable attribute, when clicked it pulls all available trip information.
