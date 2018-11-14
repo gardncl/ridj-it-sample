@@ -1,48 +1,4 @@
-
-None selected
-
-Skip to content
-Using Gmail with screen readers
-Enable desktop notifications for Gmail.
-   OK  No thanks
-
-3 of 6,202
-Test assignment.
-Inbox
-x
-
-Alex Nikitin <administrator@ridj-it.com>
-Attachments
-Nov 12, 2018, 12:27 PM (1 day ago)
-to me, Rik, Ari
-
-Hi Clay,
-
-Thanks for expressing your interest in Ridj-it development. After discussing with dev team, we decided to come up with test assignment, so that we can assess your skills.
-
-Please let us know if you have questions. We understand that your time is precious and you may have other priorities in your weekly schedule, but kindly provide approximate time you may need to complete this (I have a week in my mind).
-
-Best regards,
-Alex
-
-
-
-Attachments area
-
-Clay Gardner
-5:38 AM (14 hours ago)
-to administrator, rik.ganguly, Antonio
-
-A week sounds reasonable! I'll get it done.
-
-
-Antonio Iaccarino
-9:55 AM (9 hours ago)
-to me, administrator, rik.ganguly
-
-Thanks, Clay! Looking forward to it!
-
-Looking forward to it too!Me too!Thanks!
+![](https://api.travis-ci.org/gardncl/ridj-it-sample.svg?branch=master)
 
 Imagine you work on a web application based around an MVC framework.
 
