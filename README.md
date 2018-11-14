@@ -1,4 +1,4 @@
-![](https://api.travis-ci.org/gardncl/ridj-it-sample.svg?branch=master)
+# Ridj-It Sample [![Build Status](https://travis-ci.org/gardncl/ridj-it-sample.svg?branch=master)](https://travis-ci.org/gardncl/ridj-it-sample)
 
 ## Setup database
 1. Install docker
