@@ -14,7 +14,7 @@ import java.time.*;
 public class Trip {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="trips_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "trips_id_seq")
     private int id;
 
     @NotNull
@@ -27,4 +27,38 @@ public class Trip {
     @NotNull
     private LocalDate date;
 
+    public Trip(int id, @NotNull @Size(max = 40) String name, @NotNull String description, @NotNull LocalDate date) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.date = date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 }
