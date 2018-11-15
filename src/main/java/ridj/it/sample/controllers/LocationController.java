@@ -4,8 +4,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-
 @RestController
 @RequestMapping(value = "/location")
 public class LocationController {
@@ -14,6 +12,5 @@ public class LocationController {
     public String example() {
         return "you see me?";
     }
-
 
 }
