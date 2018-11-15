@@ -1,5 +1,11 @@
 # Ridj-It Sample [![Build Status](https://travis-ci.org/gardncl/ridj-it-sample.svg?branch=master)](https://travis-ci.org/gardncl/ridj-it-sample)
 
+## Checklist
+
+ - [ ] Implement rendering of a List of destination with ability to get full details on particular trip.
+ - [ ] Implement ability to update an existed trip via REST call.
+ - [ ] Implement deleting of existed trip.
+
 ## Setup database
 1. Install docker
 2. Copy `docker-compose.yml.example` to `docker-compose.yml`
@@ -14,6 +20,8 @@ CREATE USER dev;
 CREATE DATABASE ridjit;
 ```
 7. You're ready!
+
+## Prompt
 
 Imagine you work on a web application based around an MVC framework.
 
