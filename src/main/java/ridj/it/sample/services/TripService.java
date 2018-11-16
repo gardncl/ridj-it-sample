@@ -25,4 +25,16 @@ public class TripService {
         }
     }
 
+    @Transactional
+    public int update(Trip updatedTrip) {
+        Optional<Trip> existingTrip =
+                trips.findById(updatedTrip.getId());
+        if (existingTrip.isPresent()) {
+            trips.save(updatedTrip);
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
 }

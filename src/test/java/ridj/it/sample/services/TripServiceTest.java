@@ -33,7 +33,7 @@ public class TripServiceTest {
     }
 
     @Test
-    public void tripExists() {
+    public void deleteTripWhenExists() {
         int id = 1;
         Trip trip = new Trip(id, "foo", "bar", LocalDate.now());
         when(trips.findById(id))
@@ -46,14 +46,41 @@ public class TripServiceTest {
     }
 
     @Test
-    public void noTripExists() {
+    public void deleteTripWhenNoneExists() {
         int id = 1;
         when(trips.findById(id))
                 .thenReturn(Optional.empty());
 
         int rowsUpdated = tripService.deleteById(id);
 
-        verify(trips, times(0)).deleteById(id);
+        verify(trips, times(0)).deleteById(any(Integer.class));
+        assertEquals(0, rowsUpdated);
+    }
+
+    @Test
+    public void updateTripWhenExists() {
+        int id = 1;
+        Trip existingTrip = new Trip(id, "foo", "bar", LocalDate.now());
+        Trip updateTrip = new Trip(id, "baz", "qux", LocalDate.now());
+        when(trips.findById(id))
+                .thenReturn(Optional.of(existingTrip));
+
+        int rowsUpdated = tripService.update(updateTrip);
+
+        verify(trips, times(1)).save(updateTrip);
+        assertEquals(1, rowsUpdated);
+    }
+
+    @Test
+    public void updateTripWhenNoneExists() {
+        int id = 1;
+        Trip updateTrip = new Trip(id, "baz", "qux", LocalDate.now());
+        when(trips.findById(id))
+                .thenReturn(Optional.empty());
+
+        int rowsUpdated = tripService.update(updateTrip);
+
+        verify(trips, times(0)).save(any(Trip.class));
         assertEquals(0, rowsUpdated);
     }
 }
