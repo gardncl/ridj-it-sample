@@ -2,8 +2,8 @@
 
 ## Checklist
 
- - [ ] Implement rendering of a List of destination with ability to get full details on particular trip.
-   - [ ] Implement rendering list of destinations that each contain list of trip ids
+ - [x] Implement rendering of a List of destination with ability to get full details on particular trip.
+   - [x] Implement rendering list of destinations that each contain list of trip ids
       * `select locations.id, locations.name, locations.address, locations.city, locations.state, array_to_string(array_agg(distinct trips.id), ',') as trip from locations join trips on locations.id = trips.location group by locations.id;`
       * Can't figure out how to map that
    - [x] Implement get for a single trip for "get full details on particular trip"
