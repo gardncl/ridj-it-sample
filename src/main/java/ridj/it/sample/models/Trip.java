@@ -27,6 +27,11 @@ public class Trip {
     @NotNull
     private LocalDate date;
 
+
+    public Trip() {
+
+    }
+
     public Trip(int id, @NotNull @Size(max = 40) String name, @NotNull String description, @NotNull LocalDate date) {
         this.id = id;
         this.name = name;
@@ -36,6 +41,10 @@ public class Trip {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
