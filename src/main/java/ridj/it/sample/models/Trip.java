@@ -4,6 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -27,7 +32,11 @@ public class Trip {
     @NotNull
     private LocalDate date;
 
+    @OneToOne
+    @JoinColumn(name = "id", table = "locations")
+    private Location location;
 
+    // for json serialization
     public Trip() {
 
     }
@@ -69,5 +78,13 @@ public class Trip {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }
