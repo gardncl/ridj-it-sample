@@ -3,7 +3,7 @@
 ## Checklist
 
  - [ ] Implement rendering of a List of destination with ability to get full details on particular trip.
- - [ ] Implement ability to update an existed trip via REST call.
+ - [x] Implement ability to update an existed trip via REST call.
  - [x] Implement deleting of existed trip.
 
 ## Setup database
