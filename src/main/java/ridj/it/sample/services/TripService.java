@@ -37,4 +37,8 @@ public class TripService {
         }
     }
 
+    public Optional<Trip> getById(int id) {
+        return trips.findById(id);
+    }
+
 }

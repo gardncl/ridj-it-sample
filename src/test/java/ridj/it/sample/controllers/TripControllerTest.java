@@ -1,6 +1,5 @@
 package ridj.it.sample.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -14,10 +13,12 @@ import ridj.it.sample.models.Trip;
 import ridj.it.sample.services.TripService;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -90,6 +91,29 @@ public class TripControllerTest {
                 put("/trip")
                         .content(json)
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(status().isNotFound())
+                .andReturn();
+    }
+
+    @Test
+    public void tripExistsForGet() throws Exception {
+        int id = 1;
+        Trip existingTrip = new Trip(id, "foo", "bar", LocalDate.now());
+        when(tripService.getById(id))
+                .thenReturn(Optional.of(existingTrip));
+
+        mockMvc.perform(get("/trip/" + id))
+                .andExpect(status().isOk())
+                .andReturn();
+    }
+
+    @Test
+    public void tripDoesNotExistForGet() throws Exception {
+        int id = 1;
+        when(tripService.getById(id))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(get("/trip/" + id))
                 .andExpect(status().isNotFound())
                 .andReturn();
     }

@@ -13,6 +13,8 @@ import ridj.it.sample.models.Trip;
 import ridj.it.sample.repositories.Trips;
 import ridj.it.sample.services.TripService;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping(value = "/trip")
 public class TripController {
@@ -49,5 +51,14 @@ public class TripController {
         }
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Trip> getById(@PathVariable(value = "id") int id) {
+        Optional<Trip> tripOptional = tripService.getById(id);
+        if (tripOptional.isPresent()) {
+            return new ResponseEntity<>(tripOptional.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
 }

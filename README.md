@@ -3,6 +3,8 @@
 ## Checklist
 
  - [ ] Implement rendering of a List of destination with ability to get full details on particular trip.
+   - [ ] Implement rendering list of destinations that each contain list of trip ids
+   - [x] Implement get for a single trip for "get full details on particular trip"
  - [x] Implement ability to update an existed trip via REST call.
  - [x] Implement deleting of existed trip.
 
