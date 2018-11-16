@@ -32,6 +32,7 @@ public class Trip {
     @NotNull
     private LocalDate date;
 
+    @NotNull
     @OneToOne
     @JoinColumn(name = "id", table = "locations")
     private Location location;
